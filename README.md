@@ -7,19 +7,19 @@ This project demonstrates a secure, banking-style backend system built on **AWS*
 
 ```mermaid
 graph TD
-    User((User)) -->|HTTP Request| Website[S3 Static Website]
-    Website -->|API Call :5000| TransService[Transaction Service<br/>(Public Subnet - VPC 1)]
-    
-    subgraph "VPC 1: Main Banking Network"
-        TransService -->|Internal API :5002| AcctService[Account Service<br/>(Private Subnet)]
+    User((User)) -->|HTTP Request| Website["S3 Static Website"]
+    Website -->|API Call :5000| TransService["Transaction Service<br/>(Public Subnet - VPC 1)"]
+
+    subgraph VPC1["VPC 1: Main Banking Network"]
+        TransService -->|Internal API :5002| AcctService["Account Service<br/>(Private Subnet)"]
     end
-    
-    subgraph "VPC 2: Disaster Recovery Network"
-        BackupService[Backup Service<br/>(Private Subnet)]
+
+    subgraph VPC2["VPC 2: Disaster Recovery Network"]
+        BackupService["Backup Service<br/>(Private Subnet)"]
     end
-    
-    AcctService -->|VPC Peering Loop :5003| BackupService
-    
+
+    AcctService -->|VPC Peering Link :5003| BackupService
+
     style TransService fill:#f9f,stroke:#333,stroke-width:2px
     style AcctService fill:#bbf,stroke:#333,stroke-width:2px
     style BackupService fill:#bfb,stroke:#333,stroke-width:2px
