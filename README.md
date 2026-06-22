@@ -56,3 +56,12 @@ To run this project locally for testing:
    ```bash
    python test_local_flow.py
    ```
+   
+## Demo
+
+https://github.com/user-attachments/assets/e27c33de-4a8d-4e7c-b9af-3624f542ce0b
+
+
+## Logs Preview
+
+<img width="1600" height="254" alt="aws-logs" src="https://github.com/user-attachments/assets/6f18d521-f4a4-4741-a2f3-900040c458c8" />
