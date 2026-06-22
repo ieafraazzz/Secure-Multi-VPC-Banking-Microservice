@@ -21,3 +21,4 @@ Designed and implemented a secure, fault-tolerant banking backend infrastructure
 - Flask API Development & Integration
 - Infrastructure Security (Network ACLs, Security Groups)
 - Cross-VPC Communication Management
+  (use in resume)
